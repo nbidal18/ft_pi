@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 10:52:55 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/27 12:36:35 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/27 12:52:10 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int print_nbr(int n)
 	{
 		return (write (1, "0", 1));
 	}
-	if (n < 0)
+	/*if (n < 0)
 	{
 		write (1, "-", 1);
 		n = -n;
@@ -56,7 +56,7 @@ int print_nbr(int n)
 		digit = n % 10;
 		write(1, &digit, 1);
 		count++;
-	}
+	}*/
 	return (count);
 }
 
@@ -105,8 +105,8 @@ int main()
 {
 	int count1 = 0;
 	int count2 = 0;
-	count1 = printf("(printf) Hello %s, today is %d.\n", "Nizar", 0);
-	printf("(printf) Count: %d", count1);
-	count2 = ft_printf("(ft_printf) Hello %s, today is %d.\n", "Nizar", 0);
-	ft_printf("(ft_printf) Count: %d", count2);
+	count1 = printf("(printf) Hello %s, today is %%.\n", "Nizar");
+	printf("(printf) Count: %d\n", count1);
+	count2 = ft_printf("(ft_printf) Hello %s, today is %%.\n", "Nizar");
+	ft_printf("(ft_printf) Count: %d\n", count2);
 }
