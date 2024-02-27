@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 15:03:42 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/27 15:04:34 by nbidal           ###   ########.fr       */
+/*   Created: 2024/02/27 15:02:34 by nbidal            #+#    #+#             */
+/*   Updated: 2024/02/27 17:34:02 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int print_str(char *s)
+int print_char(int c)
 {
-	int	count;
-	
-	count = 0;
-	while (*s)
-		count += print_char(*s++);
-	return (count);
+	return (write (1, &c, 1));
 }

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_ptr.c                                        :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 15:06:01 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/27 17:29:40 by nbidal           ###   ########.fr       */
+/*   Created: 2024/02/27 15:03:42 by nbidal            #+#    #+#             */
+/*   Updated: 2024/02/27 17:34:13 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int print_ptr(void *p)
+int print_str(char *s)
 {
-	if (p == NULL)
-		return (write(1, "0x0", 3));
-	uintptr_t ptr_value = (uintptr_t)p;
-	return print_nbr(ptr_value);
+	int	count;
+	
+	count = 0;
+	while (*s)
+		count += print_char(*s++);
+	return (count);
 }
