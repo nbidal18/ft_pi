@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 10:52:55 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/27 12:15:05 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/27 12:36:35 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,16 @@
 
 int print_char(int c)
 {
-	int	count;
-
-	count = 0;
-	write (1, &c, sizeof(int));
-	count++;
-	return (count);
+	return (write (1, &c, 1));
 }
 
 int print_str(char *s)
 {
 	int	count;
-
+	
 	count = 0;
 	while (*s)
-	{
-		print_char(*s++);
-		count++;
-	}
-	return (count);
-}
-
-int print_ptr(int p)
-{
-	int	count;
-
-	count = 0;
-	write (1, &p, sizeof(void *));
-	count++;
+		count += print_char(*s++);
 	return (count);
 }
 
@@ -60,8 +42,7 @@ int print_nbr(int n)
 	digit = 0;
 	if (n == 0)
 	{
-		write (1, "0", 1);
-		return (count++);
+		return (write (1, "0", 1));
 	}
 	if (n < 0)
 	{
@@ -77,6 +58,14 @@ int print_nbr(int n)
 		count++;
 	}
 	return (count);
+}
+
+int print_ptr(void *p)
+{
+	if (p == NULL)
+		return (write(1, "(null)", 6));
+	uintptr_t ptr_value = (uintptr_t)p;
+	return print_nbr(ptr_value);
 }
 
 int	ft_printf(const char *format, ...)
@@ -110,4 +99,14 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+
+int main()
+{
+	int count1 = 0;
+	int count2 = 0;
+	count1 = printf("(printf) Hello %s, today is %d.\n", "Nizar", 0);
+	printf("(printf) Count: %d", count1);
+	count2 = ft_printf("(ft_printf) Hello %s, today is %d.\n", "Nizar", 0);
+	ft_printf("(ft_printf) Count: %d", count2);
 }
