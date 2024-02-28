@@ -1,5 +1,5 @@
 [ft_printf.h]
-# include <stdarg.h> // to remove and actually code them???
+❓ # include <stdarg.h> // to remove and actually code them
 
 [print_number.c]
-when given %p > 15 it just prints the number, below it actually converts it to hex
+✅ when given %p > 15 it just prints the number, below it actually converts it to hex

@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:51:06 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 08:40:06 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 08:56:14 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	print_nbr(int n, int base)
 	}
 	if (n < base)
 		count += write(1, &symbols[n], 1);
-	else if (n >= 10)
+	else if (n >= base)
 	{
-		count += print_nbr(n / 10, base);
-		count += write(1, &symbols[n % 10], 1);
+		count += print_nbr(n / base, base);
+		count += write(1, &symbols[n % base], 1);
 	}
 	return (count);
 }
