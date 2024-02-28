@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:18:12 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 16:15:50 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:29:57 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 int	ft_putnbr_u(unsigned int n)
 {
 	int				count;
-	char 			*symbols;
+	char			*symbols;
 	unsigned int	base;
 
 	count = 0;
 	symbols = "0123456789";
 	base = 10;
 	if (n == 2147483648)
-		return(ft_putstr("2147483648"));
+		return (ft_putstr("2147483648"));
 	if (n < base)
 		count += ft_putchar(symbols[n]);
 	if (n >= base)

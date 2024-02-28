@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:51:06 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 16:02:27 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:24:41 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_putnbr(int n)
 	symbols = "0123456789";
 	base = 10;
 	if (n == -2147483648)
-		return(ft_putstr("-2147483648"));
+		return (ft_putstr("-2147483648"));
 	if (n < 0)
 	{
 		count += ft_putchar('-');

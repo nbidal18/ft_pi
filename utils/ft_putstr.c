@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:03:42 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 15:54:23 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:30:06 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putstr(char *s)
 {
 	int	count;
-	
+
 	count = 0;
 	if (s == NULL)
 		return (write(1, "(null)", 6));
