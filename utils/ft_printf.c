@@ -6,20 +6,21 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 10:52:55 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/27 17:49:10 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 08:40:28 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_printf(const char *format, ...) // too long
+int	ft_printf(const char *format, ...)
 {
-	va_list args;
+	va_list	args;
 	int		count;
-	
+
 	count = 0;
 	va_start(args, format);
 	while (*format)
+	{
 		if (*format == '%')
 		{
 			format++;
@@ -41,22 +42,22 @@ int	ft_printf(const char *format, ...) // too long
 		}
 		else
 			count += print_char(*format++);
+	}
 	va_end(args);
 	return (count);
 }
 
-int main()
+/*int	main(void)
 {
-	int count1 = 0;
-	int count2 = 0;
-	char a = 'a';
-	char *p = a;
+	int	count1;
+	int	count2;
+
+	count1 = 0;
+	count2 = 0;
 	ft_printf("\n");
-	count1 = printf("1 Hello %s, today is %s %d, chances of rain are %d%%, the temperature outside is %d and you lucky number is %d, testing p %p\n",
-	 "Nizar", "Tuesday", 27, 7, -3, 1337, p);
+	count1 = printf("%x\n", 16);
 	printf("1 Count: %d\n", count1);
-	count2 = ft_printf("2 Hello %s, today is %s %d, chances of rain are %d%%, the temperature outside is %d and you lucky number is %d, testing p %p\n",
-	 "Nizar", "Tuesday", 27, 7, -3, 1337, p);
+	count2 = ft_printf("%x\n", 16);
 	ft_printf("2 Count: %d\n", count2);
 	ft_printf("\n");
-}
+}*/
