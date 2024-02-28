@@ -6,13 +6,13 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:19:14 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 16:44:56 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 17:04:32 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_puthex(unsigned int n)
+int	ft_puthex(unsigned long int n)
 {
 	int					count;
 	char				*symbols;
