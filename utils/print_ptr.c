@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:06:01 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 08:37:14 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 09:00:53 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	print_ptr(void *p)
 	if (p == NULL)
 		return (write(1, "0x0", 3));
 	ptr_value = (uintptr_t)p;
-	return (print_nbr(ptr_value, 16));
+	return (print_nbr(ptr_value, 16, 1));
 }
