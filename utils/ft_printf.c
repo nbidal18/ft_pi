@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 10:52:55 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 09:03:40 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 10:40:24 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	ft_printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 				count += print_nbr(va_arg(args, int), 10, 1);
 			else if (*format == 'u')
-				count += print_nbr(va_arg(args, unsigned int), 10, 1);
+				count += print_nbr(va_arg(args, int), 10, 1);
 			else if (*format == 'x')
-				count += print_nbr(va_arg(args, unsigned int), 16, 1);
+				count += print_nbr(va_arg(args, int), 16, 1);
 			else if (*format == 'X')
 				count += print_nbr(va_arg(args, unsigned int), 16, 2);
 			else if (*format == '%')
@@ -57,9 +57,9 @@ int	ft_printf(const char *format, ...)
 	count1 = 0;
 	count2 = 0;
 	ft_printf("\n");
-	count1 = printf("%X\n", 11);
+	count1 = printf("%x\n", -123);
 	printf("1 Count: %d\n", count1);
-	count2 = ft_printf("%X\n", 11);
+	count2 = ft_printf("%x\n", -123);
 	ft_printf("2 Count: %d\n", count2);
 	ft_printf("\n");
 }*/

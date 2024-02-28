@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:51:06 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 09:02:07 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/28 10:40:58 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	print_nbr(int n, int base, int m)
 {
-	int		count;
-	char	*symbols;
+	int			count;
+	char		*symbols;
 
 	count = 0;
 	if (m == 1)

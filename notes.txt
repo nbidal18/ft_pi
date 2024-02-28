@@ -1,5 +1,20 @@
 [ft_printf.h]
-❓ # include <stdarg.h> // to remove and actually code them
+❌ # include <stdarg.h> // to remove and actually code them
 
 [print_number.c]
 ✅ when given %p > 15 it just prints the number, below it actually converts it to hex
+
+[print_str.c]
+❓ doesn't work as it should when given %s = NULL
+❓ printf just prints "(null)", but seems to not be enough
+✅ idk how or why but it's now working
+
+[print_nbr.c]
+❓ int and long limits don't work
+if I just use long, somehow it's not ok...
+
+[ft_printf.c]
+❓ check if x and X should be "unsigned" int
+
+[print_ptr.c]
+❓ i just don't understand how to deal with pointers
