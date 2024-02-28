@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_ptr.c                                        :+:      :+:    :+:   */
+/*   ft_puthex_up.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 15:06:01 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 12:56:06 by nbidal           ###   ########.fr       */
+/*   Created: 2024/02/28 13:19:46 by nbidal            #+#    #+#             */
+/*   Updated: 2024/02/28 16:07:20 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	print_ptr(void *p)
+int	ft_puthex_up(unsigned int n)
 {
-	uintptr_t	ptr_value;
+	int					count;
+	char				*symbols;
+	unsigned int		base;
 
-	if (p == NULL || p == 0)
-		return (write(1, "0x0", 3));
-	else
+	count = 0;
+	symbols = "0123456789ABCDEF";
+	base = 16;
+	if (n < 0)
+		n = -n;
+	if (n < base)
+		count += ft_putchar(symbols[n]);
+	if (n >= base)
 	{
-		ptr_value = (uintptr_t)p;
-		return (print_nbr(ptr_value, 16, 1));
+		count += ft_puthex_up(n / base);
+		count += ft_putchar(symbols[n % base]);
 	}
+	return (count);
 }

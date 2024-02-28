@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 15:08:17 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 15:40:51 by nbidal           ###   ########.fr       */
+/*   Created: 2024/02/28 13:19:14 by nbidal            #+#    #+#             */
+/*   Updated: 2024/02/28 16:07:34 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../ft_printf.h"
 
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdint.h>
+int	ft_puthex(unsigned int n)
+{
+	int					count;
+	char				*symbols;
+	unsigned int		base;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(int c);
-int	ft_puthex_up(unsigned int n);
-int	ft_puthex(unsigned int n);
-int	ft_putnbr_u(unsigned int n);
-int	ft_putnbr(int n);
-int	ft_putptr(void *p);
-int	ft_putstr(char *s);
-#endif
+	count = 0;
+	symbols = "0123456789abcdef";
+	base = 16;
+	if (n < 0)
+		n = -n;
+	if (n < base)
+		count += ft_putchar(symbols[n]);
+	if (n >= base)
+	{
+		count += ft_puthex(n / base);
+		count += ft_putchar(symbols[n % base]);
+	}
+	return (count);
+}

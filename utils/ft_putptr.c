@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_nbr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 16:51:06 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 10:40:58 by nbidal           ###   ########.fr       */
+/*   Created: 2024/02/27 15:06:01 by nbidal            #+#    #+#             */
+/*   Updated: 2024/02/28 16:14:42 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	print_nbr(int n, int base, int m)
+int	ft_putptr(void *p)
 {
-	int			count;
-	char		*symbols;
-
-	count = 0;
-	if (m == 1)
-		symbols = "0123456789abcdef";
-	else if (m == 2)
-		symbols = "0123456789ABCDEF";
-	if (n < 0)
-	{
-		count += write(1, "-", 1);
-		n = -n;
-	}
-	if (n < base)
-		count += write(1, &symbols[n], 1);
-	else if (n >= base)
-	{
-		count += print_nbr(n / base, base, m);
-		count += write(1, &symbols[n % base], 1);
-	}
-	return (count);
+	return(ft_puthex_up((uintptr_t)p));
 }

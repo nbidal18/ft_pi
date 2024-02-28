@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 15:03:42 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 09:53:01 by nbidal           ###   ########.fr       */
+/*   Created: 2024/02/28 13:18:12 by nbidal            #+#    #+#             */
+/*   Updated: 2024/02/28 16:15:50 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	print_str(char *s)
+int	ft_putnbr_u(unsigned int n)
 {
-	int	count;
+	int				count;
+	char 			*symbols;
+	unsigned int	base;
 
 	count = 0;
-	if (s == NULL)
-		count += write(1, "(null)", 6);
-	while (s != NULL && *s)
-		count += print_char(*s++);
+	symbols = "0123456789";
+	base = 10;
+	if (n == 2147483648)
+		return(ft_putstr("2147483648"));
+	if (n < base)
+		count += ft_putchar(symbols[n]);
+	if (n >= base)
+	{
+		count += ft_putnbr(n / base);
+		count += ft_putchar(symbols[n % base]);
+	}
 	return (count);
 }
