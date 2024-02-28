@@ -18,3 +18,13 @@ if I just use long, somehow it's not ok...
 
 [print_ptr.c]
 ❓ i just don't understand how to deal with pointers
+
+[specifiers]
+✅ c
+✅ s
+❌ p
+❌ d/i
+❌ u
+❌ x
+❌ X
+✅ %
