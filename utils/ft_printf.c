@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 10:52:55 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/28 16:42:24 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/02/29 10:37:25 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			//count += ft_specifiers(&format, args);
 			if (*format == 'c')
 				count += ft_putchar(va_arg(args, int));
 			else if (*format == 's')
