@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 10:22:31 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/29 10:35:52 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/03/01 10:55:47 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ int	ft_specifiers(const char **format, va_list args)
 		count += ft_puthex_up(va_arg(args, unsigned int));
 	else if (**format == '%')
 		count += ft_putchar('%');
-	(*format)++;
 	return (count);
 }

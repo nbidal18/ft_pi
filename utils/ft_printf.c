@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 10:52:55 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/29 10:37:25 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/03/01 10:55:33 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,7 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			//count += ft_specifiers(&format, args);
-			if (*format == 'c')
-				count += ft_putchar(va_arg(args, int));
-			else if (*format == 's')
-				count += ft_putstr(va_arg(args, char *));
-			else if (*format == 'p')
-				count += ft_putptr(va_arg(args, void *));
-			else if (*format == 'd' || *format == 'i')
-				count += ft_putnbr(va_arg(args, int));
-			else if (*format == 'u')
-				count += ft_putnbr_u(va_arg(args, unsigned int));
-			else if (*format == 'x')
-				count += ft_puthex(va_arg(args, unsigned int));
-			else if (*format == 'X')
-				count += ft_puthex_up(va_arg(args, unsigned int));
-			else if (*format == '%')
-				count += ft_putchar('%');
+			count += ft_specifiers(&format, args);
 			format++;
 		}
 		else
@@ -58,9 +42,9 @@ int	ft_printf(const char *format, ...)
 	count1 = 0;
 	count2 = 0;
 	ft_printf("\n");
-	count1 = printf("1 • %d\n", 2147483647);
-	printf("1 • %d\n", count1);
-	count2 = ft_printf("2 • %d\n", 2147483647);
-	ft_printf("2 • %d\n", count2);
+	count1 = printf("1 %c\n", 0);
+	printf("1 %d\n", count1);
+	count2 = ft_printf("2 %c\n", 0);
+	ft_printf("2 %d\n", count2);
 	ft_printf("\n");
 }*/

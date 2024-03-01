@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:08:17 by nbidal            #+#    #+#             */
-/*   Updated: 2024/02/29 10:37:35 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/03/01 10:52:34 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	ft_putnbr_u(unsigned int n);
 int	ft_putnbr(int n);
 int	ft_putptr(void *p);
 int	ft_putstr(char *s);
-//int	ft_specifiers(const char **format, va_list args);
+int	ft_specifiers(const char **format, va_list args);
 #endif
