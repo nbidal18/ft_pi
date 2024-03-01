@@ -1,4 +1,4 @@
-CC = ccc
+CC = cc
 FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
 UTILS = utils
