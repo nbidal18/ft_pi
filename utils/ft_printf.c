@@ -6,7 +6,7 @@
 /*   By: nbidal <nbidal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 10:52:55 by nbidal            #+#    #+#             */
-/*   Updated: 2024/03/01 10:55:33 by nbidal           ###   ########.fr       */
+/*   Updated: 2024/03/01 13:37:07 by nbidal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int	ft_printf(const char *format, ...)
 	count1 = 0;
 	count2 = 0;
 	ft_printf("\n");
-	count1 = printf("1 %c\n", 0);
+	count1 = printf("1 %p %p \n", 0, 0);
 	printf("1 %d\n", count1);
-	count2 = ft_printf("2 %c\n", 0);
-	ft_printf("2 %d\n", count2);
+	//count2 = ft_printf("2 %p %p \n", 0, 0);
+	//ft_printf("2 %d\n", count2);
 	ft_printf("\n");
 }*/
