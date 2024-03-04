@@ -1,8 +1,8 @@
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-UTILS = utils
-MANDATORY_SOURCES = $(UTILS)/ft_printf.c $(UTILS)/ft_putchar.c $(UTILS)/ft_puthex_up.c $(UTILS)/ft_puthex.c $(UTILS)/ft_putnbr_u.c $(UTILS)/ft_putnbr.c $(UTILS)/ft_putptr.c $(UTILS)/ft_putstr.c $(UTILS)/ft_specifiers.c
+FOLDER = utils
+MANDATORY_SOURCES = $(FOLDER)/ft_printf.c $(FOLDER)/ft_putchar.c $(FOLDER)/ft_puthex_up.c $(FOLDER)/ft_puthex.c $(FOLDER)/ft_putnbr_u.c $(FOLDER)/ft_putnbr.c $(FOLDER)/ft_putptr.c $(FOLDER)/ft_putstr.c $(FOLDER)/ft_specifiers.c
 MANDATORY_OBJECTS = $(MANDATORY_SOURCES:.c=.o)
 HEADER = ft_printf.h
 
