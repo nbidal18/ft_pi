@@ -19,7 +19,7 @@ clean:
 	rm -f $(MANDATORY_OBJECTS)
 
 fclean:
-	rm -f $(NAME)
+	rm -f $(NAME) $(MANDATORY_OBJECTS)
 
 re: fclean all
 
