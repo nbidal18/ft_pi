@@ -10,4 +10,4 @@ To use `ft_printf` in your project:
 3. Replace any calls to `printf()` in your code with `ft_printf()`.
 
 ## Grade
-I didn't do the Bonus part so I got **100**.
+I only did the Mandatory part so I got **100**.
